@@ -1,0 +1,54 @@
+.main {
+  text-align: center;
+  &--logo {
+    max-width: 100px;
+    margin: 10px auto;
+    img {
+      width: 100%;
+    }
+  }
+  h1 {
+    text-align: center;
+    padding: 10px;
+    font-weight: 100;
+    font-size: 20px;
+    small {
+      font-weight: bold;
+      color: #E9DC51;
+      font-size: 32px;
+    }
+  }
+  .orbit-button {
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: 0.2s background-color ease-in-out;
+    -moz-transition: 0.2s background-color ease-in-out;
+    -ms-transition: 0.2s background-color ease-in-out;
+    -o-transition: 0.2s background-color ease-in-out;
+    transition: 0.2s background-color ease-in-out;
+    &.active {
+      background: #E9DC51;
+      padding: 7px 10px;
+    }
+    &:hover {
+      opacity: 0.95;
+    }
+  }
+  .logout {
+    width: auto;
+    float: right;
+    button {
+      cursor: pointer;
+      background: #E9DC51;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin: 5px 20px 0 0;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
