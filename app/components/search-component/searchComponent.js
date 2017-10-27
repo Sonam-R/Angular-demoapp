@@ -9,29 +9,28 @@
             controllerAs: 'model',
             controller: SearchComponentController,
             bindings: {
-                count: '<'
+                count: '<',
+                onSearch: '&',
+                searchQuery: '='
             }
         };
 
-        function SearchComponentController($scope) {
+        function SearchComponentController($scope, $timeout) {
             let vm = $scope.model;
-
-            vm.searchPlanet = function (name) {
-                $scope.$emit('searchQuery', name);
-            };
 
             vm.$onChanges = function (obj) {
                 if (obj.counts.currentValue) {
                     vm.count = obj.count.currentValue;
                 }
             };
+            // $scope.$watch('searchQuery', vm.onSearch);
 
             vm.$onDestroy = function () {
                 vm = null;
             };
         }
 
-        SearchComponentController.$inject = ['$scope'];
+        SearchComponentController.$inject = ['$scope', '$timeout'];
 
         return CDO;
     }

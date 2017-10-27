@@ -12,7 +12,8 @@
     </h1>
     <h5 ng-if="model.count <= 0 && model.user.name === 'Luke Skywalker'">You are out of your search limit, please try
         after some time</h5>
-    <search-component count="model.count"></search-component>
+    <search-component search-query="model.searchQuery" on-search="model.searchPlanet(model.searchQuery)"
+                      count="model.count"></search-component>
 
     <div class="clear-fix"></div>
 
@@ -21,6 +22,5 @@
     </button>
     <planets list="model.planets"></planets>
     <h4 ng-show="model.isLoading">Loading..</h4>
-
 
 </div>

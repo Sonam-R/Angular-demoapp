@@ -7,6 +7,7 @@
         vm.getOrbit = function (index) {
             vm.selected = index;
             vm.isLoading = true;
+            vm.searchQuery = '';
             ApiService.getAllPlanets({page: index}, function (res) {
                 vm.isLoading = false;
                 vm.planets = res.results;
@@ -20,7 +21,7 @@
             $state.go('home.login')
         };
 
-        $scope.$on('searchQuery', function (e, params) {
+        vm.searchPlanet = function (params) {
             vm.isLoading = true;
             ApiService.getPlanet({search: params}, function (res) {
                 vm.isLoading = false;
@@ -29,7 +30,8 @@
                     vm.count = vm.count - 1;
                 }
             });
-        });
+
+        }
 
     }]);
 })();
