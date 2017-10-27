@@ -15,7 +15,7 @@
             }
         };
 
-        function SearchComponentController($scope, $timeout) {
+        function SearchComponentController($scope) {
             let vm = $scope.model;
 
             vm.$onChanges = function (obj) {
@@ -23,14 +23,13 @@
                     vm.count = obj.count.currentValue;
                 }
             };
-            // $scope.$watch('searchQuery', vm.onSearch);
 
             vm.$onDestroy = function () {
                 vm = null;
             };
         }
 
-        SearchComponentController.$inject = ['$scope', '$timeout'];
+        SearchComponentController.$inject = ['$scope'];
 
         return CDO;
     }
