@@ -77,7 +77,8 @@ body {
       opacity: 1; }
 
 .main {
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .main--logo {
     max-width: 100px;
     margin: 10px auto; }
@@ -119,3 +120,8 @@ body {
       margin: 5px 20px 0 0; }
       .main .logout button:hover {
         opacity: 0.8; }
+  .main .loading-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px; }

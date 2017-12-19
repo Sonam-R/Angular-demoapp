@@ -1,5 +1,6 @@
 .main {
   text-align: center;
+  position: relative;
   &--logo {
     max-width: 100px;
     margin: 10px auto;
@@ -50,5 +51,11 @@
         opacity: 0.8;
       }
     }
+  }
+  .loading-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
   }
 }
