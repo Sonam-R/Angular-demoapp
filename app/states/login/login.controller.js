@@ -4,19 +4,20 @@
         vm.loading = false;
 
         vm.login = function(){
-            vm.loading = true;
-            $timeout( function(){
                 ApiService.login({search : vm.username},function(r){
                     for(let i = 0; i< r.results.length; i++ ){
                         if(r.results[i].name === vm.username && r.results[i].birth_year === vm.password){
+                            vm.loading = true;
                             UserService.setUser(r.results[i]);
-                            $state.go('home.main');
+                            $timeout( function(){
+                                $state.go('home.main');
+                            }, 2000 );
                         }
                     }
                 }, function(err){
                     console.log(err);
                 });
-            }, 2000 );
+
         }
 
     }]);
