@@ -45,3 +45,18 @@
     }
   }
 }
+.loading-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  height: 100%;
+  text-align: center;
+  .loader {
+    position: relative;
+    top: 50%;
+    margin-top: -100px;
+  }
+}
